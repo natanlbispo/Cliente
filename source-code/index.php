@@ -19,6 +19,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/style.css" rel="stylesheet">
 
   </head>
   <body>
@@ -32,7 +33,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" method="post"  id="formLogin" >
             <div class="form-group">
-              <input placeholder="Matricula" id="campo_matricula" name="matricula" class="form-control" type="text" >
+              <input placeholder="Matrícula" id="campo_matricula" name="matricula" class="form-control" type="text" >
             </div>
             <div class="form-group">
               <input placeholder="Senha" class="form-control" id="campo_senha" name="senha" type="password">
@@ -47,7 +48,7 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Sistema Avalição Bolsas  PGCOMP</h1>
+        <h1 id="titulo">Sistema Avalição de Bolsas - PGCOMP</h1>
 
       </div>
       <div class="btn-group" role="group" aria-label="...">

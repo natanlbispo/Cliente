@@ -22,42 +22,42 @@
       </div>
     </nav>
 
-    	    <div class="container">
+            <div class="container">
 
-    	    	<br /><br />
+                <br /><br />
 
-    	    	<div class="col-md-4"></div>
-    	    	<div class="col-md-4">
-    	    		<h3>CADASTRO</h3>
-    	    		<br />
-    				<form method="post" id="formCadastrarse">
-    					<div class="form-group">
-    						<input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matricula" required="requiored" pattern="[0-9]+$" >
-    					</div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h3>Cadastro</h3>
+                    <br />
+                    <form method="post" id="formCadastrarse">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matrícula" required="requiored" pattern="[0-9]+$" >
+                        </div>
 
-    					<div class="form-group">
-    						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
-    					</div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
+                        </div>
 
-    					<div class="form-group">
-    						<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="requiored">
-    					</div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="requiored">
+                        </div>
 
-    					<button type="submit" class="btn btn-primary form-control">Inscreva-se</button>
-    				</form>
-    			</div>
-    			<div class="col-md-4"></div>
+                        <button type="submit" class="btn btn-primary form-control">Inscreva-se</button>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
 
-    			<div class="clearfix"></div>
-    			<br />
-    			<div class="col-md-4"></div>
-    			<div class="col-md-4"></div>
-    			<div class="col-md-4"></div>
+                <div class="clearfix"></div>
+                <br />
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
 
-    		</div>
+            </div>
 
 
-    	    </div>
+            </div>
 
 
 
