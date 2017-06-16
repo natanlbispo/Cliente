@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
@@ -31,16 +31,24 @@
                     <h3>Cadastro</h3>
                     <br />
                     <form method="post" id="formCadastrarse">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matrícula" required="requiored" pattern="[0-9]+$" >
+			<div class="form-group">
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required="required" pattern="[A-Za-z]+$" >
                         </div>
 
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
+                            <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required="required" pattern="[A-Za-z]+$" >
                         </div>
 
                         <div class="form-group">
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="requiored">
+                            <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matrícula" required="required" pattern="[0-9]+$" >
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="required">
                         </div>
 
                         <button type="submit" class="btn btn-primary form-control">Inscreva-se</button>
