@@ -26,6 +26,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 
   </head>
   <body>
@@ -54,7 +55,7 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Sistema Avalição Bolsas  PGCOMP</h1>
+        <h1 id="titulo">Sistema Avalição de Bolsas - PGCOMP</h1>
 
       </div>
       <div class="btn-group" role="group" aria-label="...">
