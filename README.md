@@ -5,5 +5,5 @@ Este repositório está organizado do seguinte modo:
 - requirements: requisitos, casos de uso, e protótipos de telas de interface
 - design: documento de arquitetura do projeto
 - source-code: código fonte do projeto
-- testing: casos de teste, scripts de teste, massa de dados
+- tests: casos de teste, scripts de teste, massa de dados
 - cm: documento de gerência de configuração do projeto
