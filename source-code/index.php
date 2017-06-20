@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(isset($_SESSION['matricula'])){
+		header('Location: index2.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -19,7 +26,6 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-     <link href="css/style.css" rel="stylesheet">
 
   </head>
   <body>
@@ -31,9 +37,9 @@
           <a class="navbar-brand" href="index.php" >SABolsas - PGCOMP</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" method="post"  id="formLogin" >
+          <form class="navbar-form navbar-right" method="post" action="validar_acesso.php" id="formLogin" >
             <div class="form-group">
-              <input placeholder="Matrícula" id="campo_matricula" name="matricula" class="form-control" type="text" >
+              <input placeholder="Matricula" id="campo_matricula" name="matricula" class="form-control" type="text" >
             </div>
             <div class="form-group">
               <input placeholder="Senha" class="form-control" id="campo_senha" name="senha" type="password">
@@ -48,7 +54,7 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1 id="titulo">Sistema Avalição de Bolsas - PGCOMP</h1>
+        <h1>Sistema Avalição Bolsas  PGCOMP</h1>
 
       </div>
       <div class="btn-group" role="group" aria-label="...">
