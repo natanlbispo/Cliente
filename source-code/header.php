@@ -19,8 +19,9 @@
           <button type="button" class="navbar-toggle collapsed">
           </button>
           <a class="navbar-brand" href="home.php" >SABolsas - PGCOMP</a>
-          <a class="navbar-brand" href="home.php" > <span class="label label-default">Gerenciar</span></a>
-          <a class="navbar-brand" href="home.php" > <span class="label label-default">....</span></a>
+
+          <a class="navbar-brand" href="cad_aprov.php" > <span class="label label-default">Cadastro Matrícula</span></a>
+          <a class="navbar-brand" href="cad_aluno.php" > <span class="label label-default">Cadastro Aluno</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <div id="navbar" class="navbar-collapse collapse">

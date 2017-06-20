@@ -19,15 +19,15 @@
   $sql2 = "select * from matraprov where matriculap = '$matricula' ";
 
   if($resultado_id = mysqli_query($link, $sql2)){
-
     $dados_usuario = mysqli_fetch_array($resultado_id);
-    if(isset($dados_usuario['matricula'])){
+    if(isset($dados_usuario['matriculap'])){
     }else{
       $retorno_get.="erro_matcad=1&";
       header('Location: cadastro.php?'.$retorno_get);
       die();
     }
-  }
+    }
+
 
   if($resultado_id = mysqli_query($link, $sql)){
 
