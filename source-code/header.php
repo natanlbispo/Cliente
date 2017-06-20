@@ -22,6 +22,7 @@
 
           <a class="navbar-brand" href="cad_aprov.php" > <span class="label label-default">Cadastro Matrícula</span></a>
           <a class="navbar-brand" href="cad_aluno.php" > <span class="label label-default">Cadastro Aluno</span></a>
+          <a class="navbar-brand" href="lista_alunos.php" > <span class="label label-default">Lista de Alunos</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <div id="navbar" class="navbar-collapse collapse">
