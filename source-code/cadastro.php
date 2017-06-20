@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+<?php
+  $erro_matricula = isset($_GET['erro_matricula']) ? $_GET['erro_matricula'] : 0;
+	$erro_email = isset($_GET['erro_email']) ? $_GET['erro_email'] : 0;
+  $cad_erro = isset($_GET['cad_erro']) ? $_GET['cad_erro'] : 0;
+  $cad_feito = isset($_GET['cad_feito']) ? $_GET['cad_feito'] : 0;
+  $erro_matcad = isset($_GET['erro_matcad']) ? $_GET['erro_matcad'] : 0;
+ ?>
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
@@ -22,50 +29,67 @@
       </div>
     </nav>
 
-            <div class="container">
+    	    <div class="container">
 
-                <br /><br />
+    	    	<br /><br />
 
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <h3>Cadastro</h3>
-                    <br />
-                    <form method="post" id="formCadastrarse">
-			<div class="form-group">
-                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required="required" pattern="[A-Za-z]+$" >
-                        </div>
+    	    	<div class="col-md-4"></div>
+    	    	<div class="col-md-4">
+    	    		<h3>CADASTRO</h3>
+              <?php
+                if($erro_matcad)
+                  echo '<font style ="color:#FF0000"> Matricula sem autorizaçao!</font>';
+                if($cad_erro){
+                  echo '<font style ="color:#FF0000"> Erro Cadastro!</font>';
+                }
+                if($cad_feito){
+                  echo '<font style ="color:#000FF"> Cadastro Realizado com sucesso! </font>';
+                }
+              ?>
+    	    		<br />
+    				<form method="post" action="registra_usuario.php" id="formCadastrarse">
+    					<div class="form-group">
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required="required" pattern="[A-Za-z]+$" >
-                        </div>
+                <div class="form-group">
+      						<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required="requiored">
+      					</div>
 
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matrícula" required="required" pattern="[0-9]+$" >
-                        </div>
+    						<input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matricula" required="requiored" pattern="[0-9]+$" >
+    						<?php
+    							if($erro_matricula){
+    								echo '<font style ="color:#FF0000"> Matricula ja cadastrada! </font>';
+    							}
+    						?>
+    					</div>
 
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required">
-                        </div>
+    					<div class="form-group">
+    						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="requiored">
+    						<?php
+    							if($erro_email){
+    								echo '<font style ="color:#FF0000"> Email ja cadastrada!</font>';
+    							}
+    						?>
+    					</div>
 
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="required">
-                        </div>
+    					<div class="form-group">
+    						<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="requiored">
+    					</div>
 
-                        <button type="submit" class="btn btn-primary form-control">Inscreva-se</button>
-                    </form>
-                </div>
-                <div class="col-md-4"></div>
+    					<button type="submit" class="btn btn-primary form-control">Inscreva-se</button>
+    				</form>
+    			</div>
+    			<div class="col-md-4"></div>
 
-                <div class="clearfix"></div>
-                <br />
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
+    			<div class="clearfix"></div>
+    			<br />
+    			<div class="col-md-4"></div>
+    			<div class="col-md-4"></div>
+    			<div class="col-md-4"></div>
 
-            </div>
+    		</div>
 
 
-            </div>
+    	    </div>
 
 
 
