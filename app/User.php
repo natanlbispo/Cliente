@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace SABolsas;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace SABolsas\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
