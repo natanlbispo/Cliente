@@ -28,7 +28,7 @@
 			header('Location: home.php');
 		}else{
 			//var_dump($dados_usuario);
-			header('Location: index.php?erro=1');
+			header('Location: index.php?erro_login=1');
 		}
 	} else {
 		echo 'erro login';

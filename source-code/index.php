@@ -3,6 +3,8 @@
 	if(isset($_SESSION['matricula'])){
 		header('Location: index2.php');
 	}
+	$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+	$erro_login = isset($_GET['erro_login']) ? $_GET['erro_login'] : 0;
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +43,15 @@
           <form class="navbar-form navbar-right" method="post" action="validar_acesso.php" id="formLogin" >
             <div class="form-group">
               <input placeholder="Matricula" id="campo_matricula" name="matricula" class="form-control" type="text" >
-            </div>
+							<?php
+								if($erro){
+									echo '<font style ="color:#FF0000"> Login necessário! </font>';
+								}
+								if ($erro_login){
+									echo '<font style ="color:#FF0000"> Login/Senha invalidos! </font>';
+								}
+							?>
+						</div>
             <div class="form-group">
               <input placeholder="Senha" class="form-control" id="campo_senha" name="senha" type="password">
             </div>
