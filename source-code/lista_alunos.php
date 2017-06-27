@@ -1,4 +1,15 @@
 <?php
+	session_start();
+	if(!isset($_SESSION['matricula'])){
+		header('Location: index.php?erro=1');
+	}
+
+	$cabecalho_title = "SABolsas";
+	include("header.php");
+
+
+echo "<br>";
+echo "<div style= \"margin-top: 80px\">  </div>";
 
 require_once ('db.class.php');
 
