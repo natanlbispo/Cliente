@@ -42,7 +42,6 @@
 
 							<div class="form-group">
 								<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome Avaliador" required="requiored" >
-								?>
 							</div>
 
       				<button type="submit" class="btn btn-primary form-control">Cadastrar</button>
