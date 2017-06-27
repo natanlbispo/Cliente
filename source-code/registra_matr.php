@@ -4,6 +4,7 @@
 
 
 	$matricula = $_POST['matricula'];
+  $nome = $_POST['nome'];
   //echo 'teste';
 	//echo $_POST['matricula'];
 
@@ -31,7 +32,7 @@
   		die();
     }
 
-    $sql = "insert into matraprov(matriculap  ) values ('$matricula')";
+    $sql = "insert into matraprov(matriculap, nome  ) values ('$matricula', '$nome')";
   	//executar a query
     $retorno_get= '';
   	if(mysqli_query($link, $sql)){
