@@ -272,12 +272,16 @@ class ComposerStaticInit7d6dc4fbe398a1a27cdf9c5c66d4b851
     );
 
     public static $classMap = array (
+        'AlunosTalbeSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'CreateAlunosTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_11_044035_create_alunos_table.php',
+        'CreateBolsasTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_11_121635_create_bolsas_table.php',
+        'CreateMataprovsTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_11_122532_create_mataprovs_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
+        'CreateUsuariosTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_11_121648_create_usuarios_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/DayOfMonthField.php',
@@ -3249,6 +3253,7 @@ class ComposerStaticInit7d6dc4fbe398a1a27cdf9c5c66d4b851
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
         'teste\\Alunos' => __DIR__ . '/../..' . '/app/Alunos.php',
+        'teste\\Bolsas' => __DIR__ . '/../..' . '/app/Bolsas.php',
         'teste\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'teste\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'teste\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -3262,12 +3267,14 @@ class ComposerStaticInit7d6dc4fbe398a1a27cdf9c5c66d4b851
         'teste\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'teste\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'teste\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'teste\\Mataprov' => __DIR__ . '/../..' . '/app/Mataprov.php',
         'teste\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'teste\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'teste\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'teste\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'teste\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'teste\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'teste\\Usuarios' => __DIR__ . '/../..' . '/app/Usuarios.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

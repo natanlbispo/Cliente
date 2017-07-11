@@ -2,9 +2,9 @@
 
 @section('content')
 <p>
-<h1>Alterar aluno {{$r->nome}}</h1>
+<h1>Alterar usuario {{$r->nome}}</h1>
 
-<form action="editadoa/{{$r->id}}" method="post">
+<form action="editadou/{{$r->id}}" method="post">
 
   <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 
@@ -19,22 +19,13 @@
   </div>
 
   <div class="form-group">
-    <label>Nota </label>
-    <input name="nota"  type="number" required="requiored" class="form-control"/>
+    <label>Email </label>
+    <input name="email" type="email" required="requiored" class="form-control"/>
   </div>
 
-  <div class="form-group">
-    <label>Data Entrada </label>
-    <input name="data" type="date" class="form-control"/>
-  </div>
-
-  <div class="form-group">
-    <label>Orientador </label>
-    <input name="orientador" required="requiored" class="form-control"/>
-  </div>
 	<button type="submit" class="btn btn-primary btn-block">Registrar</button>
 </form>
   <br>
-<a href="/lbolsas "> <button class="btn btn-primary btn-block">Cancelar</button> </a>
+<a href="/lusuarios "> <button class="btn btn-primary btn-block">Cancelar</button> </a>
 
 @stop

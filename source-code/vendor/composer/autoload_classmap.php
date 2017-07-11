@@ -6,12 +6,16 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AlunosTalbeSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
     'CreateAlunosTable' => $baseDir . '/database/migrations/2017_07_11_044035_create_alunos_table.php',
+    'CreateBolsasTable' => $baseDir . '/database/migrations/2017_07_11_121635_create_bolsas_table.php',
+    'CreateMataprovsTable' => $baseDir . '/database/migrations/2017_07_11_122532_create_mataprovs_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
+    'CreateUsuariosTable' => $baseDir . '/database/migrations/2017_07_11_121648_create_usuarios_table.php',
     'Cron\\AbstractField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
     'Cron\\CronExpression' => $vendorDir . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
     'Cron\\DayOfMonthField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/DayOfMonthField.php',
@@ -2983,6 +2987,7 @@ return array(
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
     'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
     'teste\\Alunos' => $baseDir . '/app/Alunos.php',
+    'teste\\Bolsas' => $baseDir . '/app/Bolsas.php',
     'teste\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'teste\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'teste\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -2996,10 +3001,12 @@ return array(
     'teste\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
     'teste\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'teste\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'teste\\Mataprov' => $baseDir . '/app/Mataprov.php',
     'teste\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'teste\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'teste\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'teste\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'teste\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'teste\\User' => $baseDir . '/app/User.php',
+    'teste\\Usuarios' => $baseDir . '/app/Usuarios.php',
 );
