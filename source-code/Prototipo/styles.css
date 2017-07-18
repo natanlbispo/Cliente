@@ -1,0 +1,20 @@
+ .colorPalets{	
+ 	background: #003366;
+    background: -webkit-gradient(linear, left top, left bottom, from(#036), to(#376098)) repeat-X;
+    background: -moz-linear-gradient(top, #036, #376098) repeat-X;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#003366, endColorstr=#376098)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#003366, endColorstr=#376098FF);
+    border-bottom: 1px solid #003366;
+}
+
+.navText{
+	line-height: 29px;
+	color: white;
+	font-weight: bolder;
+}
+
+.textFooter{
+	 text-align: center;
+	 color: white;
+	 font-weight: bolder;"
+}
