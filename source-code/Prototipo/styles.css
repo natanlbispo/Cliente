@@ -7,10 +7,39 @@
     border-bottom: 1px solid #003366;
 }
 
+.navTitle{
+	line-height: 25px;
+	color: white;
+}
+
 .navText{
 	line-height: 29px;
 	color: white;
 	font-weight: bolder;
+}
+
+.navText2{
+	color: white;
+	font-weight: bolder;
+}
+
+.navButton{
+	margin-top: 8px;
+	font-weight: bolder;
+}
+
+.sectionTitle{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 50px;
+	color: #003366;
+}
+
+.sectionText{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 25px;
+	color: #003366;
 }
 
 .textFooter{
