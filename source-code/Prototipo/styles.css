@@ -47,3 +47,21 @@
 	 color: white;
 	 font-weight: bolder;"
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.teste{
+	text-align: center;
+}
+
+.inputStyle{
+	width: 30%;
+	padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	border-radius: 5px;
+}

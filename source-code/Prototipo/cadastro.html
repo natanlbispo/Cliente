@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Lista de Alunos</title>
+	<title>Cadastro</title>
 	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -15,8 +15,6 @@ $(document).ready(function(){
     });
 });
 </script>
-	<link rel="stylesheet" href="styles.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 	<nav class="navbar navbar-light bg-faded colorPalets" >
@@ -32,7 +30,7 @@ $(document).ready(function(){
     		</div>
     		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       			<ul class="nav navbar-nav navbar-right">
-            <button type="button" class="btn btn-primary navButton" id="myBtn">Logar</button>
+              <button type="button" class="btn btn-primary navButton" id="myBtn">Logar</button>
 
               <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
@@ -43,7 +41,7 @@ $(document).ready(function(){
                       <h4 class="modal-title">Login</h4>
                     </div>
                   <div class="modal-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="index2.html">
                       <fieldset>
                         <div class="control-group">
                           <label class="control-label" for="matricula">Matrícula:</label>
@@ -80,66 +78,55 @@ $(document).ready(function(){
                   </div>     
                 </div>
               </div>
-        			<button type="button" onClick="location.href='cadastro.html'" class="btn btn-primary navButton">Cadastrar-se</button>
       			</ul>
     		</div>
   		</div>
 	</nav>
 	<header>
-    <h2 class="sectionTitle">Lista de Alunos</h2>
 	</header>
 	<section>
-        <div class="panel panel-default">
-          <div class="panel-heading">Lista de Alunos</div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Aluno</th>
-                  <th>C.R</th>
-                  <th>Orientador</th>
-                  <th>Bolsa</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Lucas Almeida</td>
-                  <td>7.5</td>
-                  <td>Ivan Machado</td>
-                  <td>Pesquisa sobre Reuso</td>
-                <tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Natan Bispo</td>
-                  <td>7.3</td>
-                  <td>Ivan Machado</td>
-                  <td>Pesquisa sobre Teste</td>
-                <tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Michelle Araújo</td>
-                  <td>7.0</td>
-                  <td>Vinicius Petrucci</td>
-                  <td>Pesquisa sobre Compiladores</td>
-                <tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Monira</td>
-                  <td>7.0</td>
-                  <td>Manoel Mendonça</td>
-                  <td>Pesquisa sobre Qualidade de Software</td>
-                <tr>            
-
-            </table>
-        </div>
+    <form class="form-horizontal teste" action="index.html">
+       <fieldset>
+         <div class="control-group">
+           <label class="control-label" for="nome">Nome:</label>
+             <div class="controls">
+               <input required="" id="nome" name="nome" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+             </div>
+         </div>
+         <div class="control-group">
+           <label class="control-label" for="sobrenome">Sobrenome:</label>
+             <div class="controls">
+               <input required="" id="sobrenome" name="sobrenome" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+             </div>
+         </div> 
+         <div class="control-group">
+           <label class="control-label" for="matricula">Matrícula:</label>
+           <div class="controls">
+             <input required="" id="matricula" name="matricula" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+           </div>
+         </div>
+         <div class="control-group">
+           <label class="control-label" for="senha">Senha:</label>
+           <div class="controls">
+             <input required="" id="senha" name="senha" class="inputStyle" type="password" placeholder="" class="input-medium">
+           </div>
+         </div>
+         <!-- Button -->
+         <div class="control-group">
+           <label class="control-label" for="signin"></label>
+           <div class="controls">
+             <button id="signin" name="signin" class="btn btn-primary navButton">Cadastrar</button>
+           </div>
+          </div>
+         </fieldset>
+       </form>
 
 	</section>
 	 <footer class="footer colorPalets">
       <div class="container">
         <p class="text-muted textFooter fixed-bottom">Universidade Federal da Bahia</p>
       </div>
-    </footer>
+    </footer><div class="container">
 	
 </body>
 </html>

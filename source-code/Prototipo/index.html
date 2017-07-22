@@ -3,12 +3,18 @@
 <head>
 	<title>Home</title>
 	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<link href="2_arquivos/sticky-footer-navbar.css" rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
 </head>
 <body>
 	<nav class="navbar navbar-light bg-faded colorPalets" >
@@ -27,7 +33,55 @@
               <li><a href="listaaluno.html" class="navText">Listar Alunos</a></li>
       			</ul>
       			<ul class="nav navbar-nav navbar-right">
-        			<button type="button" onClick="location.href='index2.html'" class="btn btn-primary navButton">Sign in</button>
+              <button type="button" class="btn btn-primary navButton" id="myBtn">Logar</button>
+
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+    
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Login</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form class="form-horizontal" action="index2.html">
+                        <fieldset>
+                          <div class="control-group">
+                            <label class="control-label" for="matricula">Matrícula:</label>
+                            <div class="controls">
+                              <input required="" id="matricula" name="matricula" type="text" class="form-control" placeholder="" class="input-medium" required="">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="senha">Senha:</label>
+                            <div class="controls">
+                              <input required="" id="senha" name="senha" class="form-control" type="password" placeholder="" class="input-medium">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="rememberme"></label>
+                            <div class="controls">
+                              <label class="inline" for="rememberme-0">
+                                <input type="checkbox" name="rememberme" id="rememberme-0" value="Remember me">
+                                Lembrar-me
+                              </label>
+                              . <a href="#">Esqueceu sua senha?</a>
+                            </div>
+                          </div>
+                          <!-- Button -->
+                          <div class="control-group">
+                            <label class="control-label" for="signin"></label>
+                            <div class="controls">
+                              <button id="signin" name="signin" class="btn btn-primary navButton">Logar</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div>
+                  </div>     
+                </div>
+              </div>
+        			<button type="button" onClick="location.href='cadastro.html'" class="btn btn-primary navButton">Cadastrar-se</button>
       			</ul>
     		</div>
   		</div>
@@ -41,9 +95,9 @@
 	</section>
 	 <footer class="footer colorPalets">
       <div class="container">
-        <p class="text-muted textFooter">Universidade Federal da Bahia</p>
+        <p class="text-muted textFooter fixed-bottom">Universidade Federal da Bahia</p>
       </div>
-    </footer><div class="container">
+    </footer>
 	
 </body>
 </html>
