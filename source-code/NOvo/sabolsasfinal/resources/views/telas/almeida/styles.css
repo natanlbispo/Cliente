@@ -1,0 +1,67 @@
+ .colorPalets{	
+ 	background: #003366;
+    background: -webkit-gradient(linear, left top, left bottom, from(#036), to(#376098)) repeat-X;
+    background: -moz-linear-gradient(top, #036, #376098) repeat-X;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#003366, endColorstr=#376098)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#003366, endColorstr=#376098FF);
+    border-bottom: 1px solid #003366;
+}
+
+.navTitle{
+	line-height: 25px;
+	color: white;
+}
+
+.navText{
+	line-height: 29px;
+	color: white;
+	font-weight: bolder;
+}
+
+.navText2{
+	color: white;
+	font-weight: bolder;
+}
+
+.navButton{
+	margin-top: 8px;
+	font-weight: bolder;
+}
+
+.sectionTitle{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 50px;
+	color: #003366;
+}
+
+.sectionText{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 25px;
+	color: #003366;
+}
+
+.textFooter{
+	 text-align: center;
+	 color: white;
+	 font-weight: bolder;"
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.teste{
+	text-align: center;
+}
+
+.inputStyle{
+	width: 30%;
+	padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	border-radius: 5px;
+}

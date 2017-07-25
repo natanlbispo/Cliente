@@ -1,8 +1,8 @@
-@extends('layout/principal')
+@extends('layouts/principal2')
 @section('content')
   <p>
-  <h1> Cadastro Aluno </h1>
-  <form action = "/admin/adiciona_a" method = "post">
+  <h1> Cadastro Usuario </h1>
+  <form action = "/adiciona_u" method = "post">
 
     <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
 
@@ -17,18 +17,13 @@
     </div>
 
     <div class="form-group">
-      <label>Nota </label>
-      <input name="nota"  type="number" required="requiored" class="form-control"/>
+      <label>Email </label>
+      <input name="email" type="email" required="requiored" class="form-control"/>
     </div>
 
     <div class="form-group">
-      <label>Data Entrada </label>
-      <input name="data" type="date" class="form-control"/>
-    </div>
-
-    <div class="form-group">
-      <label>Orientador </label>
-      <input name="orientador" required="requiored" class="form-control"/>
+      <label>Senha </label>
+      <input name="senha" type="password" required="requiored" class="form-control"/>
     </div>
 
     <button type="submit">Enviar</button>
