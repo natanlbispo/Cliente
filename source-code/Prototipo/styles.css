@@ -65,3 +65,8 @@ footer {
     box-sizing: border-box;
 	border-radius: 5px;
 }
+
+.listButton{
+	font-weight: bolder;
+	line-height: 25px;
+}	
