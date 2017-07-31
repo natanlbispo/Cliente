@@ -94,28 +94,27 @@ class AdminController extends Controller
       return view('listauser')-> with('resposta', $resposta);
     }
 
+    public function tadmin($id){
 
-        public function tadmin($id){
+      //$params = User::where('id',$id)->first();
 
-          //$params = User::where('id',$id)->first();
+      $params = User::find($id);
+      //echo $params->name;
+      if(empty($params)) {
 
-          $params = User::find($id);
-          //echo $params->name;
-          if(empty($params)) {
+        return "Esse Aluno não existe";
 
-            return "Esse Aluno não existe";
+      }
+      Admin::create([
+          'name' => $params['name'],
+          'cpf' => $params['cpf'],
+          'matricula' => $params['matricula'],
+          'email' => $params['email'],
+          'password' => bcrypt($params['password']),
+      ]);
 
-          }
-          Admin::create([
-              'name' => $params['name'],
-              'cpf' => $params['cpf'],
-              'matricula' => $params['matricula'],
-              'email' => $params['email'],
-              'password' => bcrypt($params['password']),
-          ]);
-
-          return redirect ()-> action('AdminController@list_u');;
-        }
+      return redirect ()-> action('AdminController@list_u');;
+    }
 
     public function tuser($id){
 
@@ -132,113 +131,146 @@ class AdminController extends Controller
 
       return redirect ()-> action('AdminController@list_u');
     }
-//Funções para Alunos
+  //Funções para Alunos
 
-public function list_al(){
+  public function list_al(){
 
-  $resposta = Aluno::all();
-  return view('telas.listaalunos')-> with('resposta', $resposta);
-}
-
-public function cad_al(){
-  return view('telas.cad_aluno');
-}
-
-
-public function adiciona_al(){
-
-  $params = Request::all();
-  $resposta = new Aluno($params);
-  $resposta->save();
-
-  return redirect ()-> action('AdminController@list_al') ->withInput(Request::only('nome'));
-}
-
-public function remove($id){
-
-  $resposta = Aluno::find($id);
-  $resposta->delete();
-
-  return redirect ()-> action('AdminController@list_al');
-}
-
-public function edit_al($id){
-
-  $resposta = Aluno::find($id);
-  if(empty($resposta)) {
-    return "Esse Aluno não existe";
+    $resposta = Aluno::all();
+    return view('telas.listaalunos')-> with('resposta', $resposta);
   }
-  return view('telas.edita')->with('r', $resposta);
-  //var_dump($resposta);
-}
 
-public function editado_al($id){
-
-  $params = Request::all();
-  $produto = Aluno::findOrFail($id);
-  $produto->fill($params)->save();
-
-  return redirect ()-> action('AdminController@list_al') ->withInput(Request::only('nome'));
-}
-
-public function atrb($id){
-
-  $resposta = Aluno::find($id);
-  if(empty($resposta)) {
-    return "Esse Aluno não existe";
+  public function cad_al(){
+    return view('telas.cad_aluno');
   }
-  return view('telas.atrib')->with('r', $resposta);
-  //var_dump($resposta);
-}
 
 
-// BOLSA
+  public function adiciona_al(){
 
-public function list_b(){
+    $params = Request::all();
+    $resposta = new Aluno($params);
+    $resposta->save();
 
-  $resposta = Bolsa::all();
-  return view('telas.listabolsas')-> with('resposta', $resposta);
-}
-
-public function cad_b(){
-  return view('telas.cad_bolsas');
-}
-
-
-public function adiciona_b(){
-
-  $params = Request::all();
-  $resposta = new Bolsa($params);
-  $resposta->save();
-
-  return redirect ()-> action('AdminController@list_b') ->withInput(Request::only('nome'));
-}
-
-public function removeb($id){
-
-  $resposta = Bolsa::find($id);
-  $resposta->delete();
-
-  return redirect ()-> action('AdminController@list_b');
-}
-
-public function edit_b($id){
-
-  $resposta = Bolsa::find($id);
-  if(empty($resposta)) {
-    return "Esse Bolsa não existe";
+    return redirect ()-> action('AdminController@list_al') ->withInput(Request::only('nome'));
   }
-  return view('telas.editb')->with('r', $resposta);
-  //var_dump($resposta);
-}
 
-public function editado_b($id){
+  public function remove($id){
 
-  $params = Request::all();
-  $produto = Bolsa::findOrFail($id);
-  $produto->fill($params)->save();
+    $resposta = Aluno::find($id);
+    $resposta->delete();
 
-  return redirect ()-> action('AdminController@list_b') ->withInput(Request::only('nome'));
-}
+    return redirect ()-> action('AdminController@list_al');
+  }
+
+  public function edit_al($id){
+
+    $resposta = Aluno::find($id);
+    if(empty($resposta)) {
+      return "Esse Aluno não existe";
+    }
+    return view('telas.edita')->with('r', $resposta);
+    //var_dump($resposta);
+  }
+
+  public function editado_al($id){
+
+    $params = Request::all();
+    $produto = Aluno::findOrFail($id);
+    $produto->fill($params)->save();
+
+    return redirect ()-> action('AdminController@list_al') ->withInput(Request::only('nome'));
+  }
+
+  public function atrb($id){
+
+    $resposta = Aluno::find($id);
+    if(empty($resposta)) {
+      return "Esse Aluno não existe";
+    }
+    return view('telas.atrib')->with('r', $resposta);
+    //var_dump($resposta);
+  }
+
+  public function normalize_grade() {
+    $studentList = StudentGrade::get();
+
+    $standartDeviation = $this->calcStandartDeviation($studentList);
+
+    foreach ($studentList as $student) {
+      // (Nota Média do Aluno)/Desvio Padrão))* 1,67 + 5.
+      $normalized = (($student->grade / $standartDeviation) * 1.67) + 5;
+      $student->update(['normalized_grade' => $normalized]);
+    }
+
+  }
+
+  public function calcStandartDeviation(&$studentList){
+    if (isset($studentList) && !empty($studentList)) {
+      $points = count($studentList);
+      $sum = 0;
+      foreach ($studentList as $student) {
+        $sum = $sum + $student->grade;
+      }
+
+      $average = $sum / $points;
+
+      $sum = 0;
+      foreach ($studentList as $student) {
+        $sum = $sum + (abs($student->grade - $average) ** 2) ;
+      }
+
+      return sqrt($sum / $points);
+    }
+  }
+
+
+
+  // BOLSA
+
+  public function list_b(){
+
+    $resposta = Bolsa::all();
+    return view('telas.listabolsas')-> with('resposta', $resposta);
+  }
+
+  public function cad_b(){
+    return view('telas.cad_bolsas');
+  }
+
+
+  public function adiciona_b(){
+
+    $params = Request::all();
+    $resposta = new Bolsa($params);
+    $resposta->save();
+
+    return redirect ()-> action('AdminController@list_b') ->withInput(Request::only('nome'));
+  }
+
+  public function removeb($id){
+
+    $resposta = Bolsa::find($id);
+    $resposta->delete();
+
+    return redirect ()-> action('AdminController@list_b');
+  }
+
+  public function edit_b($id){
+
+    $resposta = Bolsa::find($id);
+    if(empty($resposta)) {
+      return "Esse Bolsa não existe";
+    }
+    return view('telas.editb')->with('r', $resposta);
+    //var_dump($resposta);
+  }
+
+  public function editado_b($id){
+
+    $params = Request::all();
+    $produto = Bolsa::findOrFail($id);
+    $produto->fill($params)->save();
+
+    return redirect ()-> action('AdminController@list_b') ->withInput(Request::only('nome'));
+  }
 
 }

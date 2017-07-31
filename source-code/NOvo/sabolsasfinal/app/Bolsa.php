@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bolsa extends Model
 {
-  protected $table = 'bolsas';
+  protected $table = 'project';
 
-  protected $fillable = array('formentador', 'duracao');
+  protected $fillable = array('id', 'name', 'start_date', 'end_date');
 
   protected $guarded = ['id'];
 

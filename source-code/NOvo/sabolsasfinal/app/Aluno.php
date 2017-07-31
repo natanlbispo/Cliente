@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aluno extends Model{
 
-  protected $table = 'alunos';
+  protected $table = 'student';
 
-  protected $fillable = array('name', 'orientador', 'matricula', 'nota','cpf', 'email', 'semestre_entrada');
+  protected $fillable = array('matricula', 'name', 'email', 'enrollment_date','student_grade_id', 'cpf');
 
-  protected $guarded = ['id'];
+  protected $guarded = ['matricula'];
 
 
 }
