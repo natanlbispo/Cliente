@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de Avaliadores</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-light bg-faded colorPalets navSize" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand navTitle" href="index2.html">SigPPG</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="listaaluno2.html" class="navText">Listar Alunos</a></li>
+              <li><a href="listaavaliador.html" class="navText">Atribuir Permissão</a></li>
+              <li><a href="historico.html" class="navText">Histórico de Bolsas</a></li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle navText" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="cadastroaluno.html">Aluno</a></li>
+                    <li><a href="cadastrobolsa.html">Bolsa</a></li>
+                  </ul>
+              </li>
+            </ul>
+              <p class="navbar-text navbar-right navText2">Signed in as <a href="index.html" class="navbar-link">Eduardo Almeida</a></p>
+        </div>
+      </div>
+  </nav>
+	</nav>
+	<header>
+    <h2 class="sectionTitle">Cadastro de Avaliadores</h2>
+	</header>
+	<section>
+    <form class="form-horizontal teste" action="index.html">
+       <fieldset>
+         <div class="control-group">
+           <label class="control-label" for="nome">Nome:</label>
+             <div class="controls">
+               <input required="" id="nome" name="nome" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+             </div>
+         </div>
+         <div class="control-group">
+           <label class="control-label" for="sobrenome">Sobrenome:</label>
+             <div class="controls">
+               <input required="" id="sobrenome" name="sobrenome" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+             </div>
+         </div> 
+         <div class="control-group">
+           <label class="control-label" for="matricula">Matrícula:</label>
+           <div class="controls">
+             <input required="" id="matricula" name="matricula" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+           </div>
+         </div>
+         <!-- Button -->
+         <div class="control-group">
+           <label class="control-label" for="signin"></label>
+           <div class="controls">
+             <button id="signin" name="signin" class="btn btn-primary navButton">Cadastrar</button>
+           </div>
+          </div>
+         </fieldset>
+       </form>
+
+	</section>
+	 <footer class="footer colorPalets">
+      <div class="container">
+        <p class="text-muted textFooter fixed-bottom">Universidade Federal da Bahia</p>
+      </div>
+    </footer><div class="container">
+	
+</body>
+</html>
