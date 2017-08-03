@@ -77,8 +77,46 @@ footer {
 
 .tipos {
 	width: 230px ;
-    margin-left: 43%;
-	margin-top: 2%; 
-	margin-bottom: 2%;
 	border-radius: 5px;
+}
+
+.buscaCard {
+	width: 85%;
+	margin-left: 7%;
+	margin-right: 5%;
+
+}
+.inputHistorico {
+	width: 230px ;
+	border-radius: 5px;
+}
+
+.preRow1 {
+	float: right;
+
+}
+.row1 {
+	min-width: 400px;
+
+}
+
+.preRow2 {
+	float: right;
+
+}
+.row2 {
+	min-width: 210px;
+
+}
+
+.preRow3 {
+	float: center;
+
+}
+.row3 {
+	min-width: 200px;
+
+}
+
+.searchButton {
 }

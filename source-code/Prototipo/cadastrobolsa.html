@@ -46,28 +46,48 @@
     <form class="form-horizontal teste" action="index.html">
        <fieldset>
          <div class="control-group">
-           <label class="control-label" for="nome">Nome:</label>
+           <label class="control-label" for="areaPesquisa">Área de Pesquisa:</label>
              <div class="controls">
-               <input required="" id="nome" name="nome" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+               <select class="inputStyle">
+                <option value="Nivel">Selecione a área</option>
+                <option value="Reuso de Software">Reuso de Software</option>
+                <option value="Teste de Software">Teste de Software</option>
+                <option value="Qualidade de Software">Qualidade de Software</option>
+              </select>  
              </div>
          </div>
          <div class="control-group">
-           <label class="control-label" for="modalidade">Modalidade:</label>
+           <label class="control-label" for="agenciaFomentadora">Agência Fomentadora:</label>
              <div class="controls">
-               <input required="" id="modalidade" name="modalidade" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+               <select class="inputStyle">
+                <option value="Nivel">Selecione a Agência</option>
+                <option value="CNPq">CNPq</option>
+                <option value="Capes">Capes</option>
+                <option value="Fapesb">Fapesb</option>
+              </select>  
+             </div>
+         </div>
+         <div class="control-group">
+           <label class="control-label" for="nivel">Nível:</label>
+             <div class="controls">
+               <select class="inputStyle">
+                <option value="Nivel">Selecione o nível</option>
+                <option value="Mestrado">Mestrado</option>
+                <option value="Doutorado">Doutorado</option>
+              </select>     
              </div>
          </div> 
          <div class="control-group">
            <label class="control-label" for="valor">Valor:</label>
            <div class="controls">
-             <input required="" id="valor" name="valor" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+             <input required="" id="valor" name="valor" type="text" class="inputStyle" placeholder="Ex: 1500,50 (1500,50 reais)" class="input-medium" required="">
            </div>
          </div>
          <div class="control-group">
            <label class="control-label" for="tlconclusao">Tempo Limite de Conclusão:</label>
            <div class="controls">
              <input required="" id="tlconclusao" name="tlconclusao" class="inputStyle" type="number" placeholder="Ex: 9 (9 meses)" class="input-medium">
-           </div>
+          </div>
          </div>
          <!-- Button -->
          <div class="control-group">
