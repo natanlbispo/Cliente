@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lista de Avaliadores</title>
+  <title>Cadastro de Cálculo de Padronização</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -23,6 +24,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="listaaluno2.html" class="navText">Listar Alunos</a></li>
+              <li><a href="listaavaliador.html" class="navText">Atribuir Permissão</a></li>
               <li><a href="historico.html" class="navText">Histórico de Bolsas</a></li>
               <li class="dropdown">
                   <a href="#" class="dropdown-toggle navText" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro<span class="caret"></span></a>
@@ -30,7 +32,6 @@
                     <li><a href="cadastroavaliador.html">Avaliador</a></li>
                     <li><a href="cadastroaluno.html">Aluno</a></li>
                     <li><a href="cadastrobolsa.html">Bolsa</a></li>
-                    <li><a href="cadastrocalculo.html">Cálculo</a></li>
                     <li><a href="cadastrofomentador.html">Agência Fomentadora</a></li>
                     <li><a href="cadastroareapesquisa.html">Área de Pesquisa</a></li>
                   </ul>
@@ -40,61 +41,66 @@
         </div>
       </div>
   </nav>
+  </nav>
   <header>
-    <h2 class="sectionTitle">Lista de Avaliadores</h2>
+    <h2 class="sectionTitle">Cadastro de Cálculo de Padronização</h2>
   </header>
   <section>
-        <div class="panel panel-default">
-          <div class="panel-heading">Lista de Avaliadores</div>
+    <form class="form-horizontal teste" action="index.html">
+       <fieldset>
+         <div class="control-group">
+           <label class="control-label" for="nome">Nome da Regra:</label>
+             <div class="controls">
+               <input required="" id="nome" name="nome" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+             </div>
+         </div>
+         <div class="control-group">
+           <label class="control-label" for="calcRegra">Cálculo da Regra:</label>
+             <div class="controls">
+               <input required="" id="calcRegra" name="calcRegra" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+             </div>
+         </div>
+         <!-- Button -->
+         <div class="control-group">
+           <label class="control-label" for="signin"></label>
+           <div class="controls">
+             <button id="signin" name="signin" class="btn btn-primary navButton">Cadastrar</button>
+           </div>
+          </div>
+         </fieldset>
+       </form>
+       <div class="panel panel-default">
+          <div class="panel-heading">Cálculos Cadastrados</div>
             <table class="table">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Nome</th>
-                  <th>Departamento</th>
-                  <th>Cadastrado por</th>
-                  <th>Action</th>
+                  <th>Nome da Regra</th>
+                  <th>Cálculo da Regra</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Eduardo Almeida</td>
-                  <td>Ciência da Computação</td>
-                  <td>Ivan Machado</td>
-                  <td><button type="button" class="btn btn-primary navButton">Tornar Admin</button></td>
+                  <td>UFBA 2000</td>
+                  <td>((Nota Média do Aluno)/Desvio Padrão))* 1,67 + 6</td>
+                  <td><button type="button" class="btn btn-danger btn-primary listButton">Deletar Regra</button></td>
                 <tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>Ivan Machado</td>
-                  <td>Ciência da Computação</td>
-                  <td>Luciano Rebouças</td>
-                  <td><button type="button" class="btn btn-primary navButton">Tornar Admin</button></td>
-                <tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Luciano Rebouças</td>
-                  <td>Ciência da Computação</td>
-                  <td>Luciano Rebouças</td>
-                  <td><button type="button" class="btn btn-primary navButton">Tornar Admin</button></td>
-                <tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Cláudio Santana</td>
-                  <td>Ciência da Computação</td>
-                  <td>Ivan Machado</td>
-                  <td><button type="button" class="btn btn-primary navButton">Tornar Admin</button></td>
-                <tr>            
-
+                  <td>UFBA 2017</td>
+                  <td>((Nota Média do Aluno)/Desvio Padrão))* 1,67 + 5</td>
+                  <td><button type="button" class="btn btn-danger btn-primary listButton">Deletar Regra</button></td>
+                <tr>         
             </table>
-        </div>
 
   </section>
    <footer class="footer colorPalets">
       <div class="container">
         <p class="text-muted textFooter fixed-bottom">Universidade Federal da Bahia</p>
       </div>
-    </footer>
+    </footer><div class="container">
   
 </body>
 </html>
