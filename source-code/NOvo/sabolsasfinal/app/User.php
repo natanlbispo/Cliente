@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Professor;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -15,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','matricula', 'cpf',
+        'id', 'professor_matricula', 'admin', 'access',
     ];
 
     /**
@@ -26,4 +28,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function name($matricula) {
+        $professor = DB::table('professor')
+                        ->select('professor.name')
+                        ->where('id', '=', $matricula)
+                        ->get();
+        return $professor[0]->name;
+
+    }
 }

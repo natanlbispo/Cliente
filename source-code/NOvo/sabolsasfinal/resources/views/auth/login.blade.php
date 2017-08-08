@@ -1,4 +1,4 @@
-@extends('layouts.principal2')
+@extends('layouts.principal')
 
 @section('content')
 <div class="container">
@@ -7,18 +7,18 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('user.login.submit') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        <div class="form-group{{ $errors->has('matricula') ? ' has-error' : '' }}">
+                            <label for="matricula" class="col-md-4 control-label">Matricula</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="matricula" type="number" class="form-control" name="matricula" value="{{ old('matricula') }}" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('matricula'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('matricula') }}</strong>
                                     </span>
                                 @endif
                             </div>

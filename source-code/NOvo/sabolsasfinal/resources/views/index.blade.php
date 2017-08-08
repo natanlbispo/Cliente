@@ -1,4 +1,4 @@
-@extends('layouts.principal2')
+@extends('layouts.principal')
 @section('content')
 <header>
   <h2 class="sectionTitle">Bem vindos ao SigPPG</h2>
