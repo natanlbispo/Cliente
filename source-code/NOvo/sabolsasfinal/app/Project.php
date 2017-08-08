@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Bolsa extends Model
+class Project extends Model
 {
   protected $table = 'project';
 

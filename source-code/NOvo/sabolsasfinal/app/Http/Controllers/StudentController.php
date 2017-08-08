@@ -9,7 +9,7 @@ use Request;
 class StudentController extends Controller
 {
 	public function normalizeGrade($grade, $enrollmentDate) {
-	    $studentList = $resposta = DB::table('student')
+	    $studentList = DB::table('student')
                         ->join('student_grade', 'student.student_grade_id', '=', 'student_grade.id')
                         ->select('student_grade.grade')
                         ->where('student.enrollment_date', '=', $enrollmentDate)
@@ -147,7 +147,24 @@ class StudentController extends Controller
 	    if(empty($student)) {
 	      return "Esse Aluno não existe";
 	    }
-	    return view('telas.atribuirBolsa')->with('data', $student);
+	    $projects = DB::table('project')
+                        ->join('project_manager', 'project.id', '=', 'project_manager.project_id')
+                        ->join('agencia_fomentadora', 'agencia_fomentadora.id', '=', 'project_manager.agencia_fomentadora_id')
+                        ->join('professor', 'professor.matricula', '=', 'project_manager.professor_matricula')
+                        ->select('project.id as project_id', 
+                        		'project.name as project_name',
+                        		'agencia_fomentadora.abv as agencia_fomentadora_abv',
+                        		'professor.name as professor_name'
+                        		)
+                        ->get();
+
+        $data = array(
+        	'student' => $student,
+        	'projects' => $projects
+        );
+        // var_dump($data);
+        // die;
+	    return view('telas.atribuirBolsa')->with('data', $data);
 	}
 
 	public function assigned($id){

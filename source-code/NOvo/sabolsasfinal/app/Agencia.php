@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Fomentador extends Model{
+class Agencia extends Model{
 
-  protected $table = 'fomentador';
+  protected $table = 'agencia_fomentadora';
 
   protected $fillable = array('id', 'name', 'abr');
 
