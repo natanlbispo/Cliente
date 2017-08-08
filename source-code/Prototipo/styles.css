@@ -50,7 +50,7 @@
 .textFooter{
 	 text-align: center;
 	 color: white;
-	 font-weight: bolder;"
+	 font-weight: bolder;
 }
 
 footer {
@@ -92,32 +92,34 @@ footer {
 	border-radius: 5px;
 }
 
-.preRow1 {
-	float: right;
 
-}
 .row1 {
-	min-width: 400px;
-
+	min-width: 344px;
 }
 
-.preRow2 {
-	float: right;
 
-}
 .row2 {
-	min-width: 210px;
+	min-width: 344px;
 
 }
 
 .preRow3 {
-	float: center;
+	margin-left: 355px;
+	margin-right: 355px;
 
 }
 .row3 {
-	min-width: 200px;
+	min-width: 344px;
 
 }
 
-.searchButton {
+.labelSize {
+	width: 155px;
 }
+
+.pog {
+	margin-left: 200px;
+}
+
+
+
