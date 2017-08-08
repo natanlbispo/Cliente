@@ -21,6 +21,6 @@
 	<button type="submit" class="btn btn-primary btn-block">Registrar</button>
 </form>
   <br>
-<a href="/lalunos "> <button class="btn btn-primary btn-block">Cancelar</button> </a>
+<a href="/student/list "> <button class="btn btn-primary btn-block">Cancelar</button> </a>
 
 @stop

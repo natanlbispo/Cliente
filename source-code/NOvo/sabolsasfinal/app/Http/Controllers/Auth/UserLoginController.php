@@ -22,18 +22,23 @@ class UserLoginController extends Controller
     {
       // Validate the form data
       $this->validate($request, [
-        'email'   => 'required|email',
         'password' => 'required|min:6'
       ]);
 
       // Attempt to log the user in
-      if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-        // if successful, then redirect to their intended location
-        return redirect()->intended(route('user.dashboard'));
+      if (Auth::guard('web')->attempt(['professor_matricula' => $request->matricula, 'password' => $request->password], $request->remember)) {
+        $user = Auth::guard('web')->user();
+        if ($user->access == 1) {
+          if ($user->admin == 1) {
+            return redirect()->intended(route('admin.dashboard'));
+          }
+          else {
+            return redirect()->intended(route('user.dashboard'));
+          }
+        }
       }
-
       // if unsuccessful, then redirect back to the login with the form data
-      return redirect()->back()->withInput($request->only('email', 'remember'));
+      return redirect()->back()->withInput($request->only('professor_matricula', 'remember'));
     }
 
     public function logout()

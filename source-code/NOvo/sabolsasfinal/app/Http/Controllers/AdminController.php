@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use App\Admin;
 use App\User;
-use App\Aluno;
+use App\Student;
 use App\Matraprov;
 use App\Bolsa;
-use Request;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth:web');
     }
 
     /**
@@ -26,44 +25,6 @@ class AdminController extends Controller
     {
         return view('homeadmin');
 
-    }
-
-    public function atrb_a($id){
-
-      $params = Request::all();
-      $resposta = Aluno::find($id);
-
-      DB::table('alunos')
-            ->where('id', $id)
-            ->update(['bolsa' => $params['name'],
-                      'duracao_bolsa' => $params['duracao']
-
-            ]);
-
-      //'name' => $params['name'],
-      //$this->update(['bolsa' => DB::raw('bolsa')]);
-      //$resposta->fill($params)->save();
-
-      return redirect ()-> action('AdminController@list_al');
-    }
-
-    public function revolg($id){
-
-      $params = Request::all();
-      $resposta = Aluno::find($id);
-
-      DB::table('alunos')
-            ->where('id', $id)
-            ->update(['bolsa' => NULL,
-                      'duracao_bolsa' => '0',
-
-            ]);
-
-      //'name' => $params['name'],
-      //$this->update(['bolsa' => DB::raw('bolsa')]);
-      //$resposta->fill($params)->save();
-
-      return redirect ()-> action('AdminController@list_al');
     }
 
     public function list_u(){
@@ -131,64 +92,15 @@ class AdminController extends Controller
 
       return redirect ()-> action('AdminController@list_u');
     }
+
   //Funções para Alunos
-
-  public function list_al(){
-
-    $resposta = Aluno::all();
-    return view('telas.listaalunos')-> with('resposta', $resposta);
-  }
 
   public function cad_al(){
     return view('telas.cad_aluno');
   }
 
 
-  public function adiciona_al(){
-
-    $params = Request::all();
-    $resposta = new Aluno($params);
-    $resposta->save();
-
-    return redirect ()-> action('AdminController@list_al') ->withInput(Request::only('nome'));
-  }
-
-  public function remove($id){
-
-    $resposta = Aluno::find($id);
-    $resposta->delete();
-
-    return redirect ()-> action('AdminController@list_al');
-  }
-
-  public function edit_al($id){
-
-    $resposta = Aluno::find($id);
-    if(empty($resposta)) {
-      return "Esse Aluno não existe";
-    }
-    return view('telas.edita')->with('r', $resposta);
-    //var_dump($resposta);
-  }
-
-  public function editado_al($id){
-
-    $params = Request::all();
-    $produto = Aluno::findOrFail($id);
-    $produto->fill($params)->save();
-
-    return redirect ()-> action('AdminController@list_al') ->withInput(Request::only('nome'));
-  }
-
-  public function atrb($id){
-
-    $resposta = Aluno::find($id);
-    if(empty($resposta)) {
-      return "Esse Aluno não existe";
-    }
-    return view('telas.atrib')->with('r', $resposta);
-    //var_dump($resposta);
-  }
+  
 
   public function normalize_grade() {
     $studentList = StudentGrade::get();

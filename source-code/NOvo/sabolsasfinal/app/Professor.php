@@ -8,7 +8,7 @@ class Professor extends Model{
 
   protected $table = 'professor';
 
-  protected $fillable = array('matricula', 'name', 'email', 'hire_date', 'cpf');
+  protected $fillable = array('matricula', 'name', 'email', 'cpf');
 
   protected $guarded = ['matricula'];
 
