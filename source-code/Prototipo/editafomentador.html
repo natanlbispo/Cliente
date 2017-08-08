@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cadastro de Agência Fomentadora</title>
+  <title>Editar Agência Fomentadora</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -43,10 +43,10 @@
   </nav>
   </nav>
   <header>
-    <h2 class="sectionTitle">Cadastro de Agência Fomentadora</h2>
+    <h2 class="sectionTitle">Editar Agência Fomentadora</h2>
   </header>
   <section>
-    <form class="form-horizontal teste" action="index.html">
+    <form class="form-horizontal teste" action="cadastrofomentador.html">
        <fieldset>
          <div class="control-group">
            <label class="control-label" for="nome">Nome da Agência:</label>
@@ -65,66 +65,11 @@
          <div class="control-group">
            <label class="control-label" for="signin"></label>
            <div class="controls">
-             <button id="signin" name="signin" class="btn btn-primary navButton">Cadastrar</button>
+             <button id="signin" name="signin" class="btn btn-primary navButton">Alterar</button>
            </div>
           </div>
          </fieldset>
        </form>
-       <div class="panel panel-default">
-          <div class="panel-heading">Agências Fomentadoras</div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Nome da Agência</th>
-                  <th>Nível</th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>CNPq</td>
-                  <td>Mestrado/Doutorado</td>
-                  <td><a href="editafomentador.html"><button type="button" class="btn btn-primary listButton">Editar Agência</button></a></td>
-                  <td><button type="button" class="btn btn-danger btn-primary listButton"  data-toggle="modal" data-target="#confirm">Deletar Agência</button></td>
-                  <div class="modal fade" id="confirm" role="dialog">
-                    <div class="modal-dialog modal-md">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                        <div class="modal-body">
-                        <p> Você realmente deseja Deletar esta agência?</p>
-                        </div>
-                        <div class="modal-footer">
-                          <a href="#" type="button" class="btn btn-danger" id="delete">Deletar Agência</a>
-                          <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div> 
-                <tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Fapesb</td>
-                  <td>Mestrado</td>
-                  <td><a href="editafomentador.html"><button type="button" class="btn btn-primary listButton">Editar Agência</button></a></td>
-                  <td><button type="button" class="btn btn-danger btn-primary listButton"  data-toggle="modal" data-target="#confirm">Deletar Agência</button></td>
-                  <div class="modal fade" id="confirm" role="dialog">
-                    <div class="modal-dialog modal-md">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                          <p> Você realmente deseja Deletar esta agência?</p>
-                        </div>
-                        <div class="modal-footer">
-                          <a href="#" type="button" class="btn btn-danger" id="delete">Deletar Agência</a>
-                          <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div> 
-                <tr>         
-            </table>
 
   </section>
    <footer class="footer colorPalets">
