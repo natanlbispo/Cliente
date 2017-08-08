@@ -54,12 +54,32 @@ class StudentController extends Controller
 	    return sqrt($sum / $points);
 	}
 
+	public function updateNormalizedGrade() {
+		$resposta = DB::table('student_grade')
+                        ->join('student', 'student.student_grade_id', '=', 'student_grade.id')
+                        ->select('student.id as id', 'student.enrollment_date', 'student_grade.id as student_grade_id', 'student_grade.grade', 'student_grade.normalized_grade')
+                        ->get();
+
+        if (isset($resposta) && !empty($resposta)) {
+        	// Update normalized grade
+        	foreach ($resposta as $student) {
+
+        		$normalized = $this->normalizeGrade($student->grade, $student->enrollment_date);
+        		$newStudent = StudentGrade::find($student->student_grade_id);
+        		$newStudent->normalized_grade = $normalized;
+        		$newStudent->save();
+        	}
+        }
+	}
+
     public function listAll()
     {
+    	$this->updateNormalizedGrade();
         $resposta = DB::table('student')
                         ->join('student_grade', 'student.student_grade_id', '=', 'student_grade.id')
-                        ->select('student.*', 'student_grade.normalized_grade')
+                        ->select('student.*', 'student_grade.grade', 'student_grade.normalized_grade')
                         ->get();
+
         return view('telas.alunos')-> with('resposta', $resposta);
     }
 
