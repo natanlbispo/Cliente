@@ -150,7 +150,7 @@ class StudentController extends Controller
 	    $projects = DB::table('project')
                         ->join('project_manager', 'project.id', '=', 'project_manager.project_id')
                         ->join('agencia_fomentadora', 'agencia_fomentadora.id', '=', 'project_manager.agencia_fomentadora_id')
-                        ->join('professor', 'professor.matricula', '=', 'project_manager.professor_matricula')
+                        ->join('professor', 'professor.id', '=', 'project_manager.professor_matricula')
                         ->select('project.id as project_id', 
                         		'project.name as project_name',
                         		'agencia_fomentadora.abv as agencia_fomentadora_abv',

@@ -32,7 +32,7 @@ class User extends Authenticatable
     public static function name($matricula) {
         $professor = DB::table('professor')
                         ->select('professor.name')
-                        ->where('matricula', '=', $matricula)
+                        ->where('id', '=', $matricula)
                         ->get();
         return $professor[0]->name;
 

@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Student;
-use App\Matraprov;
-use App\Bolsa;
-use Illuminate\Http\Request;
+use App\Professor;
+use Request;
 
 class AdminController extends Controller
 {
@@ -27,70 +26,72 @@ class AdminController extends Controller
 
     }
 
-    public function list_u(){
+    // Users
+    public function listAll(){
+      $userList = DB::table('users')
+                      ->join('professor', 'professor.id', '=', 'users.professor_matricula')
+                      ->select('users.id as user_id', 
+                                'users.professor_matricula as users_professor_matricula',
+                                'users.admin as user_admin',
+                                'users.access as user_access',
+                                'professor.name as professor_name',
+                                'professor.email as professor_email')
+                      ->get();
 
-      $resposta = User::all();
-      return view('telas.listauser')-> with('resposta', $resposta);
+      return view('telas.users')->with('data', $userList);
     }
 
-    public function cad_mat(){
-
-      return view('telas.cadmat');
-
-    }
-    public function adiciona_m(){
-
-      $params = Request::all();
-      $resposta = new Matraprov($params);
-      $resposta->save();
-
-      return redirect ()-> action('AdminController@list_u');
-    }
-
-    public function list_a(){
-
-      $resposta = Admin::all();
-      return view('telas.listadmin')-> with('resposta', $resposta);
-
-      return view('listauser')-> with('resposta', $resposta);
-    }
-
-    public function tadmin($id){
-
-      //$params = User::where('id',$id)->first();
-
-      $params = User::find($id);
-      //echo $params->name;
-      if(empty($params)) {
-
-        return "Esse Aluno não existe";
-
+    public function setAdmin($id){
+      $user = User::find($id);
+      if(empty($user)) {
+        return "Esse usuário não existe";
       }
-      Admin::create([
-          'name' => $params['name'],
-          'cpf' => $params['cpf'],
-          'matricula' => $params['matricula'],
+      $user->admin = 1;
+      $user->save();
+
+      return redirect()->action('AdminController@listAll');
+    }
+
+    public function delete($id){
+
+      $user = User::find($id);
+      $professorId = $user->professor_matricula;
+      $professor = Professor::find($professorId);
+      $professor->delete();
+      $user->delete();
+
+      return redirect()->action('AdminController@listAll');
+    }
+
+    public function add(){
+      return view('telas.cadastrarUsuario');
+    }
+
+    public function added() {
+      $params = Request::all();
+      $professor = new Professor(
+        array(
+          'id' => $params['professor_matricula'],
+          'name'=> $params['name'],
           'email' => $params['email'],
-          'password' => bcrypt($params['password']),
-      ]);
+        )
+      );
+      $professor->save();
 
-      return redirect ()-> action('AdminController@list_u');;
-    }
+      $userInfo = array();
+      $userInfo['professor_matricula'] = $params['professor_matricula'];
+      if (isset($params['admin'])) {
+        $userInfo['admin'] = 1;
+      }
+      if (isset($params['access'])) {
+        $userInfo['access'] = 1;
+      }
+      $userInfo['password'] = bcrypt($params['password']);
+      $user = new User($userInfo);
+      $user->save();
 
-    public function tuser($id){
 
-      $params = Admin::find($id);
-      $params->delete();
-      return redirect ()-> action('AdminController@list_u');
-
-    }
-
-    public function removeu($id){
-
-      $resposta = User::find($id);
-      $resposta->delete();
-
-      return redirect ()-> action('AdminController@list_u');
+      return redirect()->action('AdminController@listAll');
     }
 
 }

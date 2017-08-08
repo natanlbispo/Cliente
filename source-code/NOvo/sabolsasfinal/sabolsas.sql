@@ -4,7 +4,7 @@ USE `sabolsas`;
 --
 -- Host: localhost    Database: sabolsas
 -- ------------------------------------------------------
--- Server version 5.7.19-0ubuntu0.17.04.1
+-- Server version 5.7.19-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `agencia_fomentadora` (
   `name` varchar(255) NOT NULL,
   `abv` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `agencia_fomentadora` (
 
 LOCK TABLES `agencia_fomentadora` WRITE;
 /*!40000 ALTER TABLE `agencia_fomentadora` DISABLE KEYS */;
+INSERT INTO `agencia_fomentadora` VALUES (1,'Fundação de Amparo à Pesquisa do Estado da Bahia','FAPESB');
 /*!40000 ALTER TABLE `agencia_fomentadora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -49,11 +50,13 @@ DROP TABLE IF EXISTS `professor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `professor` (
-  `matricula` bigint(11) unsigned NOT NULL,
+  `id` bigint(11) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `cpf` bigint(11) unsigned NOT NULL,
-  PRIMARY KEY (`matricula`)
+  `cpf` bigint(11) unsigned NOT NULL DEFAULT '0',
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,7 +66,7 @@ CREATE TABLE `professor` (
 
 LOCK TABLES `professor` WRITE;
 /*!40000 ALTER TABLE `professor` DISABLE KEYS */;
-INSERT INTO `professor` VALUES (68637251420,'Eduardo Santana de Almeida','esa@dcc.ufba.br',68637251420);
+INSERT INTO `professor` VALUES (53383875490,'Ivan Machado','ivan@dcc.ufba.br',0,'2017-08-08 18:57:22','2017-08-08 18:57:22'),(68637251420,'Eduardo Santana de Almeida','esa@dcc.ufba.br',68637251420,NULL,NULL);
 /*!40000 ALTER TABLE `professor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,7 +196,7 @@ CREATE TABLE `student_has_professor` (
   PRIMARY KEY (`student_matricula`,`professor_matricula`),
   KEY `fk_student_has_professor_professor1_idx` (`professor_matricula`),
   KEY `fk_student_has_professor_student_idx` (`student_matricula`),
-  CONSTRAINT `fk_student_has_professor_professor1` FOREIGN KEY (`professor_matricula`) REFERENCES `professor` (`matricula`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_student_has_professor_professor1` FOREIGN KEY (`professor_matricula`) REFERENCES `professor` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_student_has_professor_student` FOREIGN KEY (`student_matricula`) REFERENCES `student` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -218,11 +221,13 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `professor_matricula` bigint(11) unsigned NOT NULL,
   `admin` int(1) NOT NULL DEFAULT '0',
-  `access` int(11) NOT NULL DEFAULT '0',
-  `password` varchar(255) NOT NULL,
+  `access` int(1) NOT NULL DEFAULT '0',
+  `password` varchar(255) DEFAULT NULL,
   `remember_token` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -231,7 +236,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,68637251420,1,1,'$2y$10$6BFGIA1GLi0UcgPIYcweT.vs8B.o1dioCzH7qxKkJwCnf.jfFsFRy','EFP1d4Z7TDVvgQPOnUIgfBOX6DOn6MF7XtibxzwcRB0kmSIBmvgDbRuXl1uD');
+INSERT INTO `users` VALUES (1,68637251420,1,1,'$2y$10$6BFGIA1GLi0UcgPIYcweT.vs8B.o1dioCzH7qxKkJwCnf.jfFsFRy','2OtQ1tpTgwaiR25UJHp6VirQiq25UcrdjoVbOMG0JJlqSARYAlkEWgPMBOav',NULL,NULL),(5,53383875490,0,1,NULL,NULL,'2017-08-08 18:57:22','2017-08-08 18:57:22');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -244,4 +249,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-08-07 23:58:41
+-- Dump completed on 2017-08-08 13:17:00

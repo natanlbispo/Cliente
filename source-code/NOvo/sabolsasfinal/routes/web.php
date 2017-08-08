@@ -56,18 +56,14 @@ Route::prefix('agencia')->group(function(){
 });
 
 
-
-
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
-    Route::get('/luser','AdminController@list_u');
-    Route::get('/cadmat','AdminController@cad_mat');
-    Route::get('/ladmin','AdminController@list_a');
 });
 
-  Route::get('/removeu/{id}', 'AdminController@removeu');
-  Route::post('/adiciona_a', 'AdminController@adiciona_al');
-  Route::post('/adiciona_m','AdminController@adiciona_m');
-  Route::get('/tadmin/{id}', 'AdminController@tadmin');
-  Route::get('/tuser/{id}', 'AdminController@tuser');
-  Route::get('/removeb/{id}', 'AdminController@removeb');
+Route::prefix('admin/user')->group(function() {
+  Route::get('/list','AdminController@listAll');
+  Route::get('/admin/{id}','AdminController@setAdmin');
+  Route::get('/delete/{id}', 'AdminController@delete');
+  Route::get('/add', 'AdminController@add');
+  Route::post('/added', 'AdminController@added');
+});
