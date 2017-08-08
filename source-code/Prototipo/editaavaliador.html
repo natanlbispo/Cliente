@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Editar Agência Fomentadora</title>
-  <meta charset="utf-8">
+	<title>Editar Avaliador</title>
+	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-light bg-faded colorPalets navSize" >
+	<nav class="navbar navbar-light bg-faded colorPalets navSize" >
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -42,26 +42,37 @@
         </div>
       </div>
   </nav>
-  </nav>
-  <header>
-    <h2 class="sectionTitle">Editar Agência Fomentadora</h2>
-  </header>
-  <section>
-    <form class="form-horizontal teste" action="cadastrofomentador.html">
+	</nav>
+	<header>
+    <h2 class="sectionTitle">Editar Avaliador</h2>
+	</header>
+	<section>
+    <form class="form-horizontal teste" action="listaavaliador.html">
        <fieldset>
          <div class="control-group">
-           <label class="control-label" for="nome">Nome da Agência:</label>
+           <label class="control-label" for="nome">Nome:</label>
              <div class="controls">
                <input required="" id="nome" name="nome" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
              </div>
          </div>
          <div class="control-group">
-           <label class="control-label" for="nivel">Nível:</label>
+           <label class="control-label" for="sobrenome">Sobrenome:</label>
              <div class="controls">
-               <input type="checkbox" name="gender" value="male"> Mestrado<br>
-               <input type="checkbox" name="gender" value="female"> Doutorado<br>
+               <input required="" id="sobrenome" name="sobrenome" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
              </div>
          </div> 
+         <div class="control-group">
+           <label class="control-label" for="matricula">Matrícula:</label>
+           <div class="controls">
+             <input required="" id="matricula" name="matricula" type="text" class="inputStyle" placeholder="" class="input-medium" required="">
+           </div>
+         </div>
+         <div class="control-group">
+           <label class="control-label" for="senha">Senha:</label>
+           <div class="controls">
+             <input required="" id="senha" name="senha" class="inputStyle" type="password" placeholder="" class="input-medium">
+           </div>
+         </div>
          <!-- Button -->
          <div class="control-group">
            <label class="control-label" for="signin"></label>
@@ -70,14 +81,13 @@
            </div>
           </div>
          </fieldset>
-       </form>
 
-  </section>
-   <footer class="footer colorPalets">
+	</section>
+	 <footer class="footer colorPalets">
       <div class="container">
         <p class="text-muted textFooter fixed-bottom">Universidade Federal da Bahia</p>
       </div>
     </footer><div class="container">
-  
+	
 </body>
 </html>
